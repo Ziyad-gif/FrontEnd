@@ -4,7 +4,7 @@
  * dari file controllers/UserController.js
  */
 // CODE HERE
-import {findByName,formatUser,filterByMajor} from 'comtrollers/UserController.mjs';
+import { formatUser,findByName,filterByMajor } from "./controllers/UserController.mjs";
 /**
  * Fungsi Main.
  * Jangan edit atau hapus fungsi main.
@@ -15,11 +15,11 @@ import {findByName,formatUser,filterByMajor} from 'comtrollers/UserController.mj
   const resultFormatUsers = await formatUser("Mr/Mrs");
   console.log(resultFormatUsers);
 
-  console.log("\n# Find User by Name: Aufa");
-  const resultFindByName = await findByName("Aufa");
-  console.log(resultFindByName);
+   console.log("\n# Find User by Name: Aufa");
+   const resultFindByName = await findByName("Aufa");
+   console.log(resultFindByName);
 
-  console.log("\n# Filter User by Major: English");
-  const resultFilterByMajor = await filterByMajor("English");
+   console.log("\n# Filter User by Major: English");
+   const resultFilterByMajor = await filterByMajor("English");
   console.log(resultFilterByMajor);
 })();

@@ -37,4 +37,4 @@ const hasil= users.find(function(user){
 });
 // export default users;
 
-export   {users} ;
+export default  users ;

@@ -3,7 +3,7 @@
  * Import variable users dari file data/users.js
  */
 // CODE HERE
-import {users} from  "../data/users.mjs";
+import  users from  "../data/users.mjs";
 /**
  * SARAN TODO3 - TODO5.
  * Tulis dulu solusi tanpa penggunaan promise.
@@ -19,14 +19,19 @@ import {users} from  "../data/users.mjs";
  * - Gunakan promise untuk handle asynchronous.
  */
 
-const formatUser = users.map((title) => {
+const formatUser = (title) => {
+    const form= users.map(function (user){
+        return {name:title +"."+user.name,age: user.age,major: user.major}
+    });
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(users[1]);
-        }, 3000)
-    })
-});
-console.log(await formatUser[1]);
+
+            resolve(form)
+        },3000);
+    });
+
+   
+};
 /**
  * TODO 4.
  * Buat function findByName: Mencari 1 user by name.
@@ -35,14 +40,15 @@ console.log(await formatUser[1]);
  * - Gunakan method find untuk mencari 1 user.
  * - Gunakan promise untuk handle asynchronous.
  */
-const findByName = users.find((name) => {
+const findByName = (name) => {
+
+    const cari = users.find(({})=>name == 'Aufa')
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(users.find(users =>users.name =="Aufa"));
+            resolve(cari);
         },2000)
     })
-});
-console.log(findByName);
+};
 /**
  * SARAN TODO3 - TODO5.
  * Tulis dulu solusi tanpa penggunaan promise.
@@ -57,15 +63,17 @@ console.log(findByName);
  * - Gunakan method filter untuk mencari semua user.
  * - Gunakan promise untuk handle asynchronous.
  */
-const filterByMajor = users.filter((major) => {
+const filterByMajor = (major) => {
+    const filter = users.filter(function(user){
+        return user.major == "English";
+    })
     return new Promise((resolve, reject) => {
 
         setTimeout(() => {
-            resolve(users.filter(users =>users.major == "English"));
+            resolve(filter);
         },3000)
     })
-});
-console.log(filterByMajor);
+};
 /**
  * TODO 6.
  * Export fungsi: formatUser, findByName, filterByMajor

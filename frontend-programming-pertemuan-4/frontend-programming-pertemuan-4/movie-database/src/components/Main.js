@@ -1,6 +1,6 @@
 import Hello from"./Hello";
 
-const main = () => {
+main (() => {
     return(
         <Main>
         
@@ -12,5 +12,5 @@ const main = () => {
         </Main>
     )
 }
-
+);
 export default main;

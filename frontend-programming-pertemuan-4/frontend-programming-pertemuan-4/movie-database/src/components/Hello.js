@@ -5,7 +5,7 @@
  */
 function Hello(props) {
   // Melakukan destructing props (object)
-  const { name } = ziyad;
+  const { name } = props;
 
   return (
     <div className="hello">
